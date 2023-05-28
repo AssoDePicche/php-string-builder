@@ -1,0 +1,19 @@
+{
+    "name": "assodepicche/php-string-builder",
+    "description": "A class to manipulate strings in an object-oriented way.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "StringBuilder\\": "src/StringBuilder/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AssoDePicche",
+            "email": "samuelprado730@gmail.com"
+        }
+    ]
+}
