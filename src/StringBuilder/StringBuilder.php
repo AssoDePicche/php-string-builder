@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace StringBuilder;
 
-final class StringBuilder implements \Serializable, \Stringable
+final class StringBuilder implements \JsonSerializable, \Serializable, \Stringable
 {
     public function __construct(private string $content = '')
     {
@@ -23,5 +23,10 @@ final class StringBuilder implements \Serializable, \Stringable
     public function unserialize(string $content): void
     {
         $this->content = $content;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return $this->content;
     }
 }
