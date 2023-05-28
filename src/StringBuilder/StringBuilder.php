@@ -10,6 +10,18 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
     {
     }
 
+    public function __serialize(): array
+    {
+        return [
+            'content' => $this->content
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->content = $data['content'];
+    }
+
     public function __toString(): string
     {
         return $this->content;
