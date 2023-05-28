@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace StringBuilder;
 
-final class StringBuilder implements \Stringable
+final class StringBuilder implements \Serializable, \Stringable
 {
     public function __construct(private string $content = '')
     {
@@ -13,5 +13,15 @@ final class StringBuilder implements \Stringable
     public function __toString(): string
     {
         return $this->content;
+    }
+
+    public function serialize(): string
+    {
+        return $this->content;
+    }
+
+    public function unserialize(string $content): void
+    {
+        $this->content = $content;
     }
 }
