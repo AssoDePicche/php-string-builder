@@ -49,6 +49,13 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return $this;
     }
 
+    public function reverse(): self
+    {
+        $this->content = strrev($this->content);
+
+        return $this;
+    }
+
     public function toLowerCase(): self
     {
         $this->content = strtolower($this->content);
