@@ -41,4 +41,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
     {
         return $this->content;
     }
+
+    public function trim(): self
+    {
+        $this->content = trim($this->content);
+
+        return $this;
+    }
 }
