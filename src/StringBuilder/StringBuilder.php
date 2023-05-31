@@ -63,6 +63,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return $this;
     }
 
+    public function charAt(int $index): string
+    {
+        return $this->content[$index];
+    }
+
     public function toLowerCase(): self
     {
         $this->content = strtolower($this->content);
