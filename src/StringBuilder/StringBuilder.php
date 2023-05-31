@@ -55,4 +55,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
 
         return $this;
     }
+
+    public function toUpperCase(): self
+    {
+        $this->content = strtoupper($this->content);
+
+        return $this;
+    }
 }
