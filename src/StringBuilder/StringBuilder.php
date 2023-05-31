@@ -56,6 +56,13 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return $this;
     }
 
+    public function append(mixed $content): self
+    {
+        $this->content .= $content;
+
+        return $this;
+    }
+
     public function toLowerCase(): self
     {
         $this->content = strtolower($this->content);
