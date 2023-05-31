@@ -49,6 +49,13 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return $this;
     }
 
+    public function replace(array|string $search, array|string $replace): self
+    {
+        $this->content = str_replace($search, $replace, $this->content);
+
+        return $this;
+    }
+
     public function reverse(): self
     {
         $this->content = strrev($this->content);
