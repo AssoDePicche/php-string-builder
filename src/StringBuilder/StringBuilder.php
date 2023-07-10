@@ -89,6 +89,17 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return $this;
     }
 
+    public function indexOf(string $string): int
+    {
+        for ($index = 0; $index < strlen($this->content); ++$index) {
+            if ($this->content[$index] === $string) {
+                return $index;
+            }
+        }
+
+        return -1;
+    }
+
     public static function fromString(string $string): self
     {
         return new self(strval($string));
