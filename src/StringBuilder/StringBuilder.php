@@ -88,4 +88,9 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
 
         return $this;
     }
+
+    public static function fromString(string $string): self
+    {
+        return new self(strval($string));
+    }
 }
