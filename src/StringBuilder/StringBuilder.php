@@ -105,6 +105,13 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return substr($this->content, $offset, $length);
     }
 
+    public function wordwrap(int $width = 75, string $break = '\n', bool $cutLongWords = false): self
+    {
+        $this->content = wordwrap($this->content, $width, $break, $cutLongWords);
+
+        return $this;
+    }
+
     public static function fromString(string $string): self
     {
         return new self(strval($string));
