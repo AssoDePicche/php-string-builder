@@ -100,6 +100,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return -1;
     }
 
+    public function substring(int $offset, ?int $length = null): string
+    {
+        return substr($this->content, $offset, $length);
+    }
+
     public static function fromString(string $string): self
     {
         return new self(strval($string));
