@@ -110,6 +110,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return explode($separator, $this->content, $limit);
     }
 
+    public function contains(string $needle): bool
+    {
+        return str_contains($this->content, $needle);
+    }
+
     public function wordwrap(int $width = 75, string $break = '\n', bool $cutLongWords = false): self
     {
         $this->content = wordwrap($this->content, $width, $break, $cutLongWords);
