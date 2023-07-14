@@ -115,6 +115,13 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return str_contains($this->content, $needle);
     }
 
+    public function shuffle(): self
+    {
+        $this->content = str_shuffle($this->content);
+
+        return $this;
+    }
+
     public function wordwrap(int $width = 75, string $break = '\n', bool $cutLongWords = false): self
     {
         $this->content = wordwrap($this->content, $width, $break, $cutLongWords);
