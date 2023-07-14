@@ -105,6 +105,11 @@ final class StringBuilder implements \JsonSerializable, \Serializable, \Stringab
         return substr($this->content, $offset, $length);
     }
 
+    public function explode(string $separator, int $limit = PHP_INT_MAX): array
+    {
+        return explode($separator, $this->content, $limit);
+    }
+
     public function wordwrap(int $width = 75, string $break = '\n', bool $cutLongWords = false): self
     {
         $this->content = wordwrap($this->content, $width, $break, $cutLongWords);
